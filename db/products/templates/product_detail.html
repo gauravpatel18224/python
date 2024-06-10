@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Product Details</h1>
+    <h2>{{ product.product_name }}</h2>
+    <ul>
+        {% for subcategory in subcategories %}
+            <li>
+                Model: {{ subcategory.model }}, Price: {{ subcategory.price }}, RAM: {{ subcategory.ram }}
+                <img src="{{ subcategory.image.url }}" alt="{{ subcategory.model }}" width="100">
+                <a href="{% url 'update_subcategory' subcategory.pk %}">Edit</a>
+                <a href="{% url 'delete_subcategory' subcategory.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_subcategory' %}">Add Subcategory</a>
+</body>
+</html>
