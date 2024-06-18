@@ -1,0 +1,14 @@
+{
+    "mango": {
+        "quantity": 50,
+        "price": 100.0
+    },
+    "watermelon": {
+        "quantity": 100,
+        "price": 20.0
+    },
+    "banana": {
+        "quantity": 100,
+        "price": 20.0
+    }
+}
